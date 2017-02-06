@@ -1,0 +1,41 @@
+group = 'com.inalkar.trainer'
+version '1.0.0'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+compileJava.options.encoding = "UTF-8"
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.layer', name: 'gradle-git-repo-plugin', version: '2.0.2'
+        classpath 'org.liquibase:liquibase-gradle-plugin:1.2.1'
+        classpath 'com.h2database:h2:1.4.191'
+    }
+}
+apply plugin: 'git-repo'
+apply plugin: 'org.liquibase.gradle'
+
+apply from: "database.gradle"
+
+repositories {
+    mavenCentral()
+    git("https://github.com/Inalkar/com.inalkar.git", "com.inalkar", "master", "releases")
+}
+
+//sourceSets.main.compileClasspath += [configurations.provided]
+
+//idea {
+//    module {
+//        scopes.COMPILE.plus += [configurations.provided]
+//    }
+//}
+
+dependencies {
+    compile group: 'com.inalkar.storage', name: 'h2-saa-driver', version: '0.2.0'
+    runtime 'com.h2database:h2:1.4.191'
+}

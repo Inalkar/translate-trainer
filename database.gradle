@@ -1,0 +1,38 @@
+dependencies {
+    runtime 'com.h2database:h2:1.4.191'
+}
+
+liquibase {
+    activities {
+        local {
+            changeLogFile "$projectDir/src/main/liquibase/changelog.xml"
+            url 'jdbc:h2:db/vocabulary;FILE_LOCK=NO'
+            username 'sa'
+            password ''
+        }
+    }
+
+    runList = 'local'
+}
+
+task createDatabaseScript {
+    group = 'database'
+    doLast {
+        def fileName = 'start-local-db'
+        if(System.properties['os.name'].startsWith('Windows')) {
+            fileName += '.bat'
+        }
+        def file = new File(projectDir, fileName)
+        file.withPrintWriter {  pw ->
+            pw.print("java -cp ${sourceSets.main.runtimeClasspath.asPath} org.h2.tools.Server")
+        }
+        file.setExecutable(true)
+    }
+}
+
+task startDatabase(type: JavaExec) {
+    group = 'database'
+    workingDir = projectDir
+    main = 'org.h2.tools.Server'
+    classpath = sourceSets.main.runtimeClasspath
+}

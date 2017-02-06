@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="0.2.0-2" author="inalkar">
+
+        <insert tableName="USER">
+            <column name="id"          value="4e57-3f9f-65955eda-959a-5019da4e45a0"/>
+            <column name="login"       value="admin"/>
+            <column name="password"    value="A1EE80B3538EBE894B82C2A3D0DA095A405F37E8"/>
+            <column name="salt"        value="321D9E66626B8CD7"/>
+            <column name="active"      valueBoolean="true"/>
+        </insert>
+
+        <insert tableName="ROLE">
+            <column name="id"   value="4c4f-7947-9e07caaf-930e-4711141ea8d5"/>
+            <column name="name" value="DAF_ADMIN"/>
+        </insert>
+
+        <insert tableName="USERROLES">
+            <column name="roleid"   value="4e57-3f9f-65955eda-959a-5019da4e45a0"/>
+            <column name="userid"   value="4c4f-7947-9e07caaf-930e-4711141ea8d5"/>
+        </insert>
+
+        <rollback>
+            <delete tableName="USER">
+                <where>id = 4e57-3f9f-65955eda-959a-5019da4e45a0</where>
+            </delete>
+            <delete tableName="ROLE">
+                <where>id = 4c4f-7947-9e07caaf-930e-4711141ea8d5</where>
+            </delete>
+            <delete tableName="USERROLES">
+                <where>
+                    roleid = 4c4f-7947-9e07caaf-930e-4711141ea8d5
+                    AND userid = 4e57-3f9f-65955eda-959a-5019da4e45a0
+                </where>
+            </delete>
+        </rollback>
+
+    </changeSet>
+
+</databaseChangeLog>
