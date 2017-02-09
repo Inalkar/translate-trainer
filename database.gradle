@@ -6,7 +6,7 @@ liquibase {
     activities {
         local {
             changeLogFile "$projectDir/src/main/liquibase/changelog.xml"
-            url 'jdbc:h2:db/vocabulary;FILE_LOCK=NO'
+            url "jdbc:h2:$projectDir/db/vocabulary;FILE_LOCK=NO"
             username 'sa'
             password ''
         }

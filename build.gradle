@@ -36,6 +36,7 @@ repositories {
 //}
 
 dependencies {
-    compile group: 'com.inalkar.storage', name: 'h2-saa-driver', version: '0.2.0'
+    compile group: 'com.inalkar.storage', name: 'h2-saa-driver', version: '0.2.2'
+    compile group: 'org.apache.logging.log4j', name:'log4j-core', version: '2.5'
     runtime 'com.h2database:h2:1.4.191'
 }

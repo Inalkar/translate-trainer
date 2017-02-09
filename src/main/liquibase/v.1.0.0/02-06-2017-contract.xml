@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1.0.0-2" author="inalkar">
+        <insert tableName="GROUP">
+            <column name="id"          value="1"/>
+            <column name="name"        value="Contract"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="1"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Contract"/>
+            <column name="rus"      value="Конракт"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="2"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Agreement"/>
+            <column name="rus"      value="Договор"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="3"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Appendix"/>
+            <column name="rus"      value="Приложение"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="4"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Article"/>
+            <column name="rus"      value="Параграф"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="5"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Clause"/>
+            <column name="rus"      value="Пункт"/>
+            <column name="rus_alt1" value="Условие"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="6"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Conditions"/>
+            <column name="rus"      value="Условия"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="7"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Terms"/>
+            <column name="rus"      value="Условия"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="8"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Force Majeure"/>
+            <column name="rus"      value="Форс-мажор"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="9"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Fulfil"/>
+            <column name="rus"      value="Выполнять"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="10"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Herein"/>
+            <column name="rus"      value="Здесь"/>
+            <column name="rus_alt1"  value="При этом"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="11"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Hereinafter"/>
+            <column name="rus"      value="Вдальнейшем"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="12"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Hereto"/>
+            <column name="rus"      value="К этому"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="13"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Heretofore"/>
+            <column name="rus"      value="Ранее"/>
+            <column name="rus_alt1"  value="До этого"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="14"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="In behalf of"/>
+            <column name="rus"      value="От лица"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="15"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Null and void"/>
+            <column name="rus"      value="Не действительный"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="16"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Branch of contract"/>
+            <column name="rus"      value="Нарушение контракта"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="17"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Consideration"/>
+            <column name="rus"      value="Рассмотрение"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="18"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Exclusion clause"/>
+            <column name="rus"      value="Исключения"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="19"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Implied terms"/>
+            <column name="rus"      value="Подразумеваемые условия"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="20"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Injunction"/>
+            <column name="rus"      value="Предписания"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="21"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Liability"/>
+            <column name="rus"      value="Обязательство"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="22"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Misrepresentation"/>
+            <column name="rus"      value="Искажение"/>
+            <column name="rus_alt1"  value="Введение в заблуждение"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="23"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Ratification"/>
+            <column name="rus"      value="Разрешение"/>
+            <column name="rus_alt1"  value="Ратификация"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="24"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Underwriter"/>
+            <column name="rus"      value="Гарант"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="25"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Party"/>
+            <column name="rus"      value="Сторона"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="26"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Stipulate"/>
+            <column name="rus"      value="Ставить условием"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="27"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Warrant"/>
+            <column name="rus"      value="Гарантировать"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="28"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Whereas"/>
+            <column name="rus"      value="Тогда как"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="29"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Without prejudice"/>
+            <column name="rus"      value="Без ушерба"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="30"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Indemnity"/>
+            <column name="rus"      value="Возмещение"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="31"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Insolvency"/>
+            <column name="rus"      value="Неплатежеспособность"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="32"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="Receivership"/>
+            <column name="rus"      value="Банкротство"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="33"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="De facto"/>
+            <column name="rus"      value="Де факто"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="34"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="De facto"/>
+            <column name="rus"      value="Де факто"/>
+        </insert>
+        
+        <insert tableName="WORD">
+            <column name="id"       value="35"/>
+            <column name="group_id" value="1"/>
+            <column name="eng"      value="De jure"/>
+            <column name="rus"      value="Де юрэ"/>
+        </insert>
+        
+    </changeSet>
+
+</databaseChangeLog>

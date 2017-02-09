@@ -6,6 +6,6 @@
                    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
     <!-- Should be only links to per-version cumulative changelog files. -->
-    <include file="02-09-2016-init.xml" relativeToChangelogFile="true"/>
-    <include file="02-10-2016-initial-data.xml" relativeToChangelogFile="true"/>
+    <include file="02-06-2017-init.xml" relativeToChangelogFile="true"/>
+    <include file="02-06-2017-contract.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

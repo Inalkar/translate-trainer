@@ -6,28 +6,10 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
-    <changeSet id="0.2.0-1" author="inalkar">
+    <changeSet id="1.0.0-1" author="inalkar">
 
-        <createTable tableName="USER">
-            <column name="id" type="UUID">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="login" type="varchar(32)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="password" type="blob">
-                <constraints nullable="false"/>
-            </column>
-            <column name="salt" type="blob">
-                <constraints nullable="false"/>
-            </column>
-            <column name="firstName" type="varchar(126)"/>
-            <column name="lastName" type="varchar(126)"/>
-            <column name="active" type="boolean" defaultValueBoolean="true"/>
-        </createTable>
-
-        <createTable tableName="ROLE">
-            <column name="id" type="UUID">
+        <createTable tableName="GROUP">
+            <column name="id" type="Integer">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(32)">
@@ -35,19 +17,31 @@
             </column>
         </createTable>
 
-        <createTable tableName="USERROLES">
-            <column name="userid" type="UUID">
+        <createTable tableName="WORD">
+            <column name="id" type="Integer">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="group_id" type="Integer">
                 <constraints nullable="false"/>
             </column>
-            <column name="roleid" type="UUID">
-                <constraints nullable="false"/>
-            </column>
+            <column name="eng" type="varchar(256)" />
+            <column name="rus" type="varchar(256)" />
+            <column name="rus_alt1" type="varchar(256)" />
+            <column name="rus_alt2" type="varchar(256)" />
+            <column name="rus_alt3" type="varchar(256)" />
         </createTable>
+        
+        <addForeignKeyConstraint baseColumnNames="group_id"
+                                 baseTableName="WORD"
+                                 constraintName="fk_word_to_group"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 referencedColumnNames="id"
+                                 referencedTableName="GROUP"/>
 
         <rollback>
             <dropTable tableName="USER"/>
             <dropTable tableName="ROLE"/>
-            <dropTable tableName="USERROLES"/>
         </rollback>
 
     </changeSet>
